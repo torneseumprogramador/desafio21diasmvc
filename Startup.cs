@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebMVCRazor.Models;
 
 namespace WebMVCRazor
 {
@@ -16,6 +17,10 @@ namespace WebMVCRazor
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            new Cliente(){ Id = 1, Nome = "Danilo", Telefone = "123432123" }.Salvar();
+            new Cliente(){ Id = 2, Nome = "Erivelton", Telefone = "54323432" }.Salvar();
+            new Cliente(){ Id = 3, Nome = "Douglas", Telefone = "653223453" }.Salvar();
+            new Cliente(){ Id = 4, Nome = "Miquéias", Telefone = "23456323" }.Salvar();
         }
 
         public IConfiguration Configuration { get; }
